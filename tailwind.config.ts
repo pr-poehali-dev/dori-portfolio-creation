@@ -88,57 +88,60 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
         sparkle: {
-          "0%, 100%": { transform: "scale(0)", opacity: "0" },
-          "50%": { transform: "scale(1)", opacity: "1" },
+          "0%, 100%": { transform: "scale(0) rotate(0deg)", opacity: "0" },
+          "50%": { transform: "scale(1) rotate(180deg)", opacity: "1" },
+        },
+        twinkle: {
+          "0%, 100%": { transform: "scale(1) rotate(0deg)", opacity: "0.7" },
+          "50%": { transform: "scale(1.5) rotate(180deg)", opacity: "1" },
         },
         float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-10px)" },
+          "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+          "50%": { transform: "translateY(-15px) rotate(5deg)" },
         },
         shimmer: {
-          "0%": { backgroundPosition: "-200% 0" },
-          "100%": { backgroundPosition: "200% 0" },
+          "0%": { backgroundPosition: "-200% 0", transform: "rotate(0deg)" },
+          "100%": { backgroundPosition: "200% 0", transform: "rotate(360deg)" },
         },
-        bounce: {
+        musicBounce: {
           "0%, 100%": {
-            transform: "translateY(-25%)",
-            animationTimingFunction: "cubic-bezier(0.8,0,1,1)",
+            transform: "scaleY(0.3)",
+            filter: "hue-rotate(0deg)",
           },
           "50%": {
-            transform: "none",
-            animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
+            transform: "scaleY(1)",
+            filter: "hue-rotate(90deg)",
           },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        sparkle: "sparkle 1.5s ease-in-out infinite",
-        float: "float 3s ease-in-out infinite",
-        shimmer: "shimmer 2s linear infinite",
-        "bounce-slow": "bounce 2s infinite",
+        sparkle: "sparkle 2s ease-in-out infinite",
+        twinkle: "twinkle 3s ease-in-out infinite",
+        float: "float 4s ease-in-out infinite",
+        shimmer: "shimmer 6s linear infinite",
+        "bounce-slow": "musicBounce 2s infinite",
+        pulse: "pulse 2s ease-in-out infinite",
       },
       boxShadow: {
         paper:
-          "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+          "0 8px 32px rgba(255, 105, 180, 0.2), 0 4px 16px rgba(50, 205, 50, 0.1), inset 0 2px 0 rgba(255, 255, 255, 0.3)",
         "paper-hover":
-          "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.2)",
+          "0 16px 64px rgba(255, 105, 180, 0.3), 0 8px 32px rgba(50, 205, 50, 0.2), inset 0 3px 0 rgba(255, 255, 255, 0.4)",
+        glow: "0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(50, 205, 50, 0.3)",
       },
     },
   },

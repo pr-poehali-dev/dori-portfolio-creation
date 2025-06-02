@@ -42,27 +42,34 @@ const Portfolio = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {artworks.map((artwork) => (
+          {artworks.map((artwork, index) => (
             <div
               key={artwork.id}
-              className="group paper-texture rounded-2xl overflow-hidden shadow-paper hover:shadow-paper-hover transition-all duration-300 hover:scale-105 border border-white/50"
+              className="group paper-texture rounded-2xl overflow-hidden shadow-paper hover:shadow-glow transition-all duration-500 hover:scale-105 border border-white/60 sparkle-overlay"
+              style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="relative overflow-hidden">
                 <img
                   src={artwork.image}
                   alt={artwork.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t ${artwork.colors} opacity-20 group-hover:opacity-30 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-t ${artwork.colors} opacity-30 group-hover:opacity-50 transition-opacity duration-500`}
                 />
+                <div className="absolute top-2 right-2 text-2xl animate-twinkle">
+                  ✨
+                </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 relative">
                 <h3 className="font-caveat text-3xl font-bold text-gray-800 mb-2">
                   {artwork.title}
                 </h3>
                 <p className="text-gray-600 italic">{artwork.description}</p>
+                <div className="absolute bottom-2 right-2 text-lg animate-pulse">
+                  🎨
+                </div>
               </div>
             </div>
           ))}

@@ -8,11 +8,11 @@ const HeroSection = () => {
         <p className="font-caveat text-3xl md:text-4xl text-dori-pink-dark mb-8 animate-bounce-slow">
           Художник мечты и волшебства
         </p>
-        <div className="paper-texture rounded-3xl p-8 mx-4 md:mx-0 max-w-2xl shadow-paper border border-dori-green-light/30">
+        <div className="paper-texture rounded-3xl p-8 mx-4 md:mx-0 max-w-2xl shadow-paper-hover border border-dori-green-light/30 animate-pulse">
           <p className="text-lg text-gray-700 leading-relaxed">
             Добро пожаловать в мой мир красок и воображения! Здесь каждый штрих
             — это история, а каждый цвет — эмоция. Погрузитесь в атмосферу
-            творчества под звуки вдохновляющей музыки.
+            творчества под звуки вдохновляющей музыки. ✨🎨🌟
           </p>
         </div>
       </div>

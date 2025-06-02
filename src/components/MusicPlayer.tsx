@@ -31,6 +31,18 @@ const MusicPlayer = () => {
                 <div className="music-bar" style={{ height: "40%" }} />
                 <div className="music-bar" style={{ height: "70%" }} />
                 <div className="music-bar" style={{ height: "50%" }} />
+                <div className="music-bar" style={{ height: "90%" }} />
+              </div>
+            )}
+            {!isPlaying && (
+              <div className="flex items-center gap-1">
+                <span className="text-xl animate-pulse">🎵</span>
+                <span
+                  className="text-lg animate-pulse"
+                  style={{ animationDelay: "0.5s" }}
+                >
+                  🎶
+                </span>
               </div>
             )}
           </div>

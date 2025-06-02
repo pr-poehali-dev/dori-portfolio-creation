@@ -1,28 +1,46 @@
+import { useState } from "react";
+import Portfolio from "@/components/Portfolio";
+import MusicPlayer from "@/components/MusicPlayer";
+import SparkleEffect from "@/components/SparkleEffect";
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-magical relative overflow-hidden">
+      <SparkleEffect />
 
-const queryClient = new QueryClient();
+      {/* Header */}
+      <header className="relative z-10 py-8">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="font-caveat text-6xl md:text-8xl font-bold text-dori-pink-dark mb-4 animate-float">
+            Дори ✨
+          </h1>
+          <p className="font-open-sans text-xl text-gray-700 max-w-2xl mx-auto">
+            Волшебный мир творчества, где каждый штрих оживает музыкой и
+            красками
+          </p>
+        </div>
+      </header>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      {/* Music Player */}
+      <div className="fixed top-4 right-4 z-50">
+        <MusicPlayer />
+      </div>
+
+      {/* Main Content */}
+      <main className="relative z-10">
+        <Portfolio />
+      </main>
+
+      {/* Footer */}
+      <footer className="relative z-10 py-8 text-center">
+        <div className="container mx-auto px-4">
+          <p className="font-caveat text-2xl text-dori-green-dark">
+            Создано с любовью и магией 🎨✨
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
 
 export default App;

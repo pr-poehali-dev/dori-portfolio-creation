@@ -37,12 +37,19 @@
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-primary: 210 40% 98%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222.2 84% 4.9%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --dori-pink: 330 81% 60%;
+    --dori-pink-light: 330 100% 85%;
+    --dori-pink-dark: 330 81% 45%;
+    --dori-green: 123 46% 34%;
+    --dori-green-light: 123 73% 64%;
+    --dori-green-dark: 123 46% 25%;
   }
 
   .dark {
@@ -109,6 +116,26 @@
       );
     background-attachment: fixed;
   }
+}
+
+.bg-gradient-magical {
+  background:
+    radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 182, 193, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(152, 251, 152, 0.4) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 255, 255, 0.8) 0%,
+      transparent 30%
+    );
+  background-attachment: fixed;
 }
 
 @layer components {
